@@ -1,3 +1,5 @@
 .idea/
 *.png
 *.apk
+debug.keystore
+.irb-history
