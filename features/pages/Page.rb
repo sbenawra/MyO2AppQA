@@ -1,4 +1,4 @@
-class GenericPageMethods
+class Page
 
   def press_button(searchString) #find button by text
     touch("New_ButtonEx marked:\'#{searchString.to_s}\'")
