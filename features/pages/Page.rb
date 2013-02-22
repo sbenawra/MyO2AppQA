@@ -1,5 +1,12 @@
 class Page
 
+  alias_method :wait_for_elements_exist_new, :wait_for_elements_exist
+
+  def wait_for_elements_exist(elements_array, options={})
+    sleep(0.3)
+    wait_for_elements_exist_new(elements_array, options={})
+  end
+
   def press_button(searchString) #find button by text
     touch("New_ButtonEx marked:\'#{searchString.to_s}\'")
   end
