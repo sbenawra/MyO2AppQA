@@ -1,10 +1,14 @@
-class Page
+class Page < Calabash::Base
+
+  #Abstraction of <page>_page. This class has represents objects and actions that can be called which are NOT page
+  #specific
 
   alias_method :wait_for_elements_exist_new, :wait_for_elements_exist
 
-  def wait_for_elements_exist(elements_array, options={})
-    sleep(0.3)
-    wait_for_elements_exist_new(elements_array, options={})
+  def wait_for_elements_exist(elements_array)
+    puts "Alias of wait_for_elements_exist called"
+    #sleep(0.5)
+    wait_for_elements_exist_new(elements_array)
   end
 
   def press_button(searchString) #find button by text

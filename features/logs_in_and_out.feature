@@ -7,4 +7,5 @@ Feature: Login feature
     Given I am on the username and password screen
     When I enter my account credentials as username "root.boot" and password "test123"
     And I attempt to sign in successfully
-    Then I set my PIN to "1234"
+    And I set my PIN to "1234"
+    Then I should see the Home page
