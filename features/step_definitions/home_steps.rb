@@ -1,7 +1,3 @@
 Given /^I should see the Home page$/ do
-    #@home_page = HomePage.new
-
-  @page
-
-
+  page(HomePage)
 end

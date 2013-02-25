@@ -1,5 +1,5 @@
 require File.dirname(__FILE__) + '/page.rb'
-class PinPage < Page
+class SetPinPage < Page
 
   def initialize
     wait_for_elements_exist(["New_TextViewEx marked:'Set a four digit PIN to keep your details safe'"], :timeout => 20)

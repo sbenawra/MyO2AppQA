@@ -14,7 +14,7 @@ class SignInPage < Page
 
   def sign_in_successfully
     press_button('Sign in')
-    page(PinPage)
+    page(SetPinPage)
   end
 
 end

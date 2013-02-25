@@ -12,7 +12,6 @@ class Page < Calabash::Base
   end
 
   def press_button_with_class(type, identifier, searchString) #add class name if different
-
     touch("#{type.to_s} #{identifier.to_s}:\'#{searchString.to_s}\'")
   end
 
