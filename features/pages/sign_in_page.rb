@@ -1,8 +1,8 @@
+require File.dirname(__FILE__) + '/page.rb'
 class SignInPage < Page
 
 
   def initialize
-    puts "Initialising HomePage"
     wait_for_elements_exist(["New_TextViewEx marked:'Sign in to review your account.'"])
   end
 

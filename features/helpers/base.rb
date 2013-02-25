@@ -3,7 +3,6 @@ include Calabash::Android::Operations
 
 
 def page(clazz)
-  puts "defining a new base.rb class"
   clazz.new
 end
 
@@ -15,7 +14,6 @@ module Calabash
     end
 
     def page(clazz)
-      puts "defining a new base.rb class from Base and module Calabash"
       clazz.new
     end
 

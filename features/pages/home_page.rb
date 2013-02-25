@@ -1,3 +1,5 @@
+require File.dirname(__FILE__) + '/page.rb'
+
 class HomePage < Page
 
   def initialize
