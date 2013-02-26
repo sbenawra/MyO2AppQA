@@ -1,9 +1,3 @@
-=begin
-Given /^I am on the username and password screen$/ do
-  @sign_in_page = SignInPage.new
-end
-=end
-
 Given /^I am on the username and password screen$/ do
   @page = page(SignInPage)
 end

@@ -6,5 +6,13 @@ Feature: Sign Out
     Given I am Logged in
 
   Scenario: When I Sign Out of the App I should be taken to the Log in Screen
-    When I press the Settings Menu button to view settings
-    And I select Sign Out
+    Given I press the Settings Menu button
+    When I select Sign Out
+    And I press OK to Sign Out
+    Then I am on the username and password screen
+
+  Scenario: When I select Sign Out and then Cancel I should remain signed in
+    Given I press the Settings Menu button
+    When I select Sign Out
+    And I press Cancel
+    Then I should see the Menu Bar
