@@ -1,4 +1,4 @@
-SIGN_OUT_MSG = "Signing out means that you'll need to enter your username and password next time you sign in, as well as set up a new PIN. Are you sure you want to sign out?"
+SIGN_OUT_MSG = "Signing out means that you'll need to enter your username and password next time you sign in, as well as set up a new PIN. Are you sure you want to sign outxxx?"
 
 And /^I select Sign Out$/ do
   @page.select_sign_out.assert_sign_out_message_displayed(SIGN_OUT_MSG)

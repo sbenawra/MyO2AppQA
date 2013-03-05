@@ -10,4 +10,8 @@ class MenuBarPage < Page
     page(SettingsMenuPage)
   end
 
+  def self.is_select_settings_displayed
+    query("RelativeLayout id:'RelativeLayoutOfSettingsMenuIcon'").size == 1
+  end
+
 end

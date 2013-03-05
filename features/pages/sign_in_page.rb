@@ -2,7 +2,7 @@ require File.dirname(__FILE__) + '/page.rb'
 class SignInPage < Page
 
   def initialize
-    wait_for_elements_exist(["New_TextViewEx marked:'Sign in to review your account.'"])
+      wait_for_elements_exist(["New_TextViewEx marked:'Sign in to review your account.'"])
   end
 
   def enter_credentials(username, password)
@@ -14,6 +14,10 @@ class SignInPage < Page
   def sign_in_successfully
     press_button('Sign in')
     page(SetPinPage)
+  end
+
+  def self.is_sign_in_page?
+    query("New_EditTextEx id:'EditUsername'").size == 1
   end
 
 end

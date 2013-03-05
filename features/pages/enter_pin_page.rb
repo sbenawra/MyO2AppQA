@@ -10,6 +10,19 @@ class EnterPinPage < Page
     page(HomePage)
   end
 
+  def self.is_enter_pin_page?
+    query("New_TextViewEx marked:'Use your PIN to access your account'").size == 1
+  end
 
+  def press_change_pin
+    press_button_with_class('New_ButtonEx','text','Change PIN')
+    wait_for_elements_exist(["New_TextViewEx text:'Change PIN'"])
+    self
+  end
+
+  def press_ok_to_change_pin
+    press_button_with_class('New_ButtonEx','text','OK')
+    page(SignInPage)
+  end
 
 end
