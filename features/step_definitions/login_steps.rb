@@ -19,12 +19,12 @@ Given /^I am on the enter PIN page$/ do
   @page = page(EnterPinPage)
 end
 
-Given /^I have previously logged in as "([^"]*)" with "([^"]*)" and setup my "([^"]*)"$/ do |username, password, pin|
+Given /^I have logged in as "([^"]*)" with "([^"]*)" and setup my "([^"]*)"$/ do |username, password, pin|
   step %{I am on the username and password screen}
   step %{I enter my account credentials as username "#{username}" and password "#{password}"}
   step %{I attempt to sign in successfully}
   step %{I set my PIN to "#{pin}"}
-  step %{I should see the Menu Bar}
+  step %{I should see the Home page}
 end
 
 

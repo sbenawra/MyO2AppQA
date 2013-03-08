@@ -12,15 +12,13 @@ Feature: Sign In
   Examples:
     | username     | password | pin  |
     | 550000000001 | password | 1234 |
-    | 660000000001 | password | 1234 |
 
   Scenario Outline: As a user who has already setup a Pin, I wish to enter my existing Pin and so that I can check my notifications
-    Given I have previously logged in as "<username>" with "<password>" and setup my "<pin>"
+    Given I have logged in as "<username>" with "<password>" and setup my "<pin>"
     When I am on the enter PIN page
     And I enter my PIN to "<pin>"
     Then I should see the Menu Bar
     And I should see the Home page
   Examples:
     | username     | password | pin  |
-    | 550000000001 | password | 1234 |
     | 660000000001 | password | 1234 |

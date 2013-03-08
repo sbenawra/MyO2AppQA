@@ -1,3 +1,6 @@
+require 'test/unit/assertions'
+include Test::Unit::Assertions
+
 class Page < Calabash::Base
 
   #Abstraction of <page>_page. This class has represents objects and actions that can be called which are NOT page
@@ -22,5 +25,9 @@ class Page < Calabash::Base
 
   def touch_input_field(type, identifier, searchString)
     touch("#{type.to_s} #{identifier.to_s}:\'#{searchString.to_s}\'")
+  end
+
+  def assert_element_exists(type, identifier, searchString)
+    assert(query("#{type.to_s} #{identifier.to_s}:\'#{searchString.to_s}\'").length == 1)
   end
 end

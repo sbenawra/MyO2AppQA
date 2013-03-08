@@ -3,5 +3,6 @@ Then /^I should see the Menu Bar$/ do
 end
 
 When /^I press the Settings Menu button$/ do
+  @page = page(MenuBarPage)
   @page = @page.select_settings_menu
 end
