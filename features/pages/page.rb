@@ -30,4 +30,8 @@ class Page < Calabash::Base
   def assert_element_exists(type, identifier, searchString)
     assert(query("#{type.to_s} #{identifier.to_s}:\'#{searchString.to_s}\'").length == 1)
   end
+
+  def press_button_with_text_like(type, search_string)
+    touch("#{type.to_s} {text LIKE '#{search_string.to_s}'}")
+  end
 end
