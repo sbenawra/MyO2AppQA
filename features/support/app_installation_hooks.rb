@@ -19,11 +19,11 @@ Before do |scenario|
       log "First scenario in feature - reinstalling apps"
     end
 
-    if !$appinstalled
+    if !$app_installed
       uninstall_apps
       install_app(ENV["TEST_APP_PATH"])
       install_app(ENV["APP_PATH"])
-      $appinstalled = true
+      $app_installed = true
     end
 
     FeatureNameMemory.feature_name = feature_name

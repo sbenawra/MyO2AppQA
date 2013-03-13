@@ -1,6 +1,4 @@
 require File.dirname(__FILE__) + '/page.rb'
-require 'test/unit/assertions'
-include Test::Unit::Assertions
 
 class HomePage < Page
 

@@ -1,12 +1,9 @@
-Given /^I should see the Home page$/ do
+Given /^I(?: should)? see the Home page$/ do
   @page = page(HomePage)
 end
 
-Then /^I should see the latest bill widget containing the text "(.*)"$/ do |expected_text|
+Then /^I should see the latest bill widget containing the text "(.*)" with cost "(.*)"$/ do |expected_text, expected_cost|
   @page.assert_latest_bill_widget_title(expected_text)
-end
-
-And /^I should see the latest bill cost as "(.*)"$/ do |expected_cost|
   @page.assert_latest_bill_cost(expected_cost)
 end
 
