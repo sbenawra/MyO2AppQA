@@ -14,3 +14,4 @@ Feature: Sign In As Postpay user to check Home
     And I should see You were billed on with date "16.10.2012"
     And I should see Payment due on with date "28.10.2012"
     And I should see Balance due as "£655.81"
+    And I should see the information message "*This is your airtime bill only. Sign in to o2.co.uk/myO2 to view your phone plan (CCA)" in the latest bill details widget

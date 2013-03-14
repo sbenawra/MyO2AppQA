@@ -1,6 +1,9 @@
 require File.dirname(__FILE__) + '/page.rb'
 
 class MyBillPage < Page
+
+  CCA_BILL_INFO_MESSAGE = '*This is your airtime bill only. Sign in to o2.co.uk/myO2 to view your phone plan (CCA)'
+
   def initialize
     wait_for_elements_exist(["New_TextViewEx id:'screen_title' text:'My bill'"])
   end
@@ -37,8 +40,13 @@ class MyBillPage < Page
     assert(query("New_TextViewEx id:'line5_2' text:'#{expected_balance}'").length == 1)
   end
 
+
   def assert_latest_bill_widget_footer(expected_message)
-    assert(query("New_TextViewEx text:'*This is your airtime bill only. Sign in to \no2.co.uk/myO2 to view your phone plan (CCA)'"))
+    if expected_message == CCA_BILL_INFO_MESSAGE
+      #Put the new line in the message in order for the Calabash Query
+      expected_message = "*This is your airtime bill only. Sign in to \no2.co.uk/myO2 to view your phone plan (CCA)"
+    end
+    assert_element_exists('New_TextViewEx', 'text', expected_message)
   end
 
 end
