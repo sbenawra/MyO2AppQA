@@ -5,7 +5,6 @@ class Page < Calabash::Base
 
   #Abstraction of <page>_page. This class has represents objects and actions that can be called which are NOT page
   #specific
-
   def press_button(searchString) #find button by text
     touch("New_ButtonEx marked:\'#{searchString.to_s}\'")
   end

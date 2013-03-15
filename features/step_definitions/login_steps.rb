@@ -1,5 +1,6 @@
 Given /^I am on the username and password screen$/ do
-  @page = page(SignInPage)
+  #@page = page(SignInPage)
+  @page = SignInPage.new
 end
 
 When /^I enter my account credentials as username "([^"]*)" and password "([^"]*)"$/ do |username, password|

@@ -1,5 +1,6 @@
 Given /^I(?: should)? see the Home page$/ do
-  @page = page(HomePage)
+  #@page = page(HomePage)
+  @page = HomePage.new
 end
 
 Then /^I should see the latest bill widget containing the text "(.*)" with cost "(.*)"$/ do |expected_text, expected_cost|

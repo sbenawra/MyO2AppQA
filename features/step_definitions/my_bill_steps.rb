@@ -1,5 +1,6 @@
 Then /^I should see the My Bill page$/ do
-  @page = page(MyBillPage)
+  #@page = page(MyBillPage)
+  @page = MyBillPage.new
 end
 
 And /^I should see the latest bill details widget containing the text "([^"]*)" with cost "([^"]*)"$/ do |expected_text, expected_cost|
