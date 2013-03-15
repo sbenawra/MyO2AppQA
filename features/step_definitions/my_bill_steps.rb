@@ -26,3 +26,24 @@ And /^I should see the information message "([^"]*)" in the latest bill details 
   @page.assert_latest_bill_widget_footer(expected_message)
 end
 
+And /^I should see the Make a payment widget containing the message "([^"]*)"$/ do |expected_message|
+  @page.assert_make_a_payment_widget_title
+  @page.assert_make_a_payment_message(expected_message)
+end
+
+And /^I press the Make a payment widget$/ do
+  @page.press_make_a_payment_widget
+end
+
+And /^I should see the Make a payment dialog containing the message "([^"]*)"$/ do |expected_message|
+  @page.assert_make_a_payment_dialog_visible
+  @page.assert_make_a_payment_message(expected_message)
+end
+
+And /^I press ok to make a payment$/ do
+  @page.press_ok_button
+end
+
+
+
+

@@ -40,13 +40,32 @@ class MyBillPage < Page
     assert(query("New_TextViewEx id:'line5_2' text:'#{expected_balance}'").length == 1)
   end
 
-
   def assert_latest_bill_widget_footer(expected_message)
     if expected_message == CCA_BILL_INFO_MESSAGE
       #Put the new line in the message in order for the Calabash Query
       expected_message = "*This is your airtime bill only. Sign in to \no2.co.uk/myO2 to view your phone plan (CCA)"
     end
     assert_element_exists('New_TextViewEx', 'text', expected_message)
+  end
+
+  def assert_make_a_payment_widget_title
+    assert_element_exists('New_TextViewEx', 'text', 'Make a payment')
+  end
+
+  def assert_make_a_payment_message(expected_message)
+    assert_element_exists('New_TextViewEx', 'text', expected_message)
+  end
+
+  def press_make_a_payment_widget
+    press_button_with_class('New_TextViewEx', 'text', 'Make a payment')
+  end
+
+  def assert_make_a_payment_dialog_visible
+    assert_element_exists('New_TextViewEx', 'id', 'dialogbox_title')
+  end
+
+  def press_ok_button
+    press_button('OK')
   end
 
 end

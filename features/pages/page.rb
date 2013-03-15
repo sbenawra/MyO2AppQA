@@ -34,4 +34,5 @@ class Page < Calabash::Base
   def press_button_with_text_like(type, search_string)
     touch("#{type.to_s} {text LIKE '#{search_string.to_s}'}")
   end
+
 end
