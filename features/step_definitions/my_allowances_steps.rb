@@ -3,10 +3,10 @@ When /^I should see the My allowances page$/ do
   @page = MyAllowancesPage.new
 end
 
-And /^I should see My airtime tariff widget$/ do
-  @page.assert_my_airtime_tariff_widget_title
+And /^I should see My tariff widget containing the text "([^"]*)"$/ do |expected_text|
+  @page.assert_my_tariff_widget_title(expected_text)
 end
 
-And /^I press My airtime tariff widget$/ do
-  @page.press_my_airtime_tariff_widget
+And /^I press the My tariff widget$/ do
+  @page.press_my_tariff_widget
 end
