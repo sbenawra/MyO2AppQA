@@ -14,4 +14,9 @@ class MyAllowancesPage < Page
     press_button_with_text_like('New_TextViewEx', 'My*tariff*')
   end
 
+  def press_minutes_widget
+    press_button_with_class('New_TextViewEx', 'text','Minutes')
+    wait_for_elements_exist(["New_TextViewEx id:'line_youhaveleft'"])
+  end
+
 end

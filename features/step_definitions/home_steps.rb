@@ -1,5 +1,4 @@
 Given /^I(?: should)? see the Home page$/ do
-  #@page = page(HomePage)
   @page = HomePage.new
 end
 

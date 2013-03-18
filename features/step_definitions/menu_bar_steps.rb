@@ -1,5 +1,4 @@
 Then /^I should see the Menu Bar$/ do
-  #@page = page(MenuBarPage)
   @page = MenuBarPage.new
 end
 

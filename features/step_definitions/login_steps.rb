@@ -1,5 +1,4 @@
 Given /^I am on the username and password screen$/ do
-  #@page = page(SignInPage)
   @page = SignInPage.new
 end
 
