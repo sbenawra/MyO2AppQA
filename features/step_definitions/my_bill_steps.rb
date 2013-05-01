@@ -36,8 +36,8 @@ And /^I press the Make a payment widget$/ do
 end
 
 And /^I should see the Make a payment dialog containing the message "([^"]*)"$/ do |expected_message|
-  @page.assert_make_a_payment_dialog_visible
-  @page.assert_make_a_payment_message(expected_message)
+  @page.assert_make_a_payment_dialog_title
+  @page.assert_make_a_payment_dialog_message(expected_message)
 end
 
 And /^I press ok to make a payment$/ do

@@ -18,7 +18,6 @@ class Page < Calabash::Base
   end
 
   def enter_text(type, identifier, searchString, input)
-    puts "#{type.to_s} #{identifier.to_s}:\'#{searchString.to_s}\'"
     query("#{type.to_s} #{identifier.to_s}:\'#{searchString.to_s}\'", :setText => input)
   end
 
@@ -26,12 +25,16 @@ class Page < Calabash::Base
     touch("#{type.to_s} #{identifier.to_s}:\'#{searchString.to_s}\'")
   end
 
-  def assert_element_exists(type, identifier, searchString)
-    assert(query("#{type.to_s} #{identifier.to_s}:\'"+"#{searchString}"+"\'").length == 1)
+  def assert_element_exists(searchCriteria)
+    assert(query("#{searchCriteria}").length == 1)
   end
 
   def press_button_with_text_like(type, search_string)
     touch("#{type.to_s} {text LIKE '#{search_string.to_s}'}")
+  end
+
+  def assert_text_is_displayed(expected_text, actual_text)
+    assert_equal(expected_text, actual_text)
   end
 
 end

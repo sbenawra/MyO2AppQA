@@ -19,7 +19,7 @@ Before do |scenario|
       log "First scenario in feature - reinstalling apps"
     end
 
-    if !$app_installed
+    unless $app_installed
       uninstall_apps
       install_app(ENV["TEST_APP_PATH"])
       install_app(ENV["APP_PATH"])
