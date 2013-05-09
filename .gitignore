@@ -3,3 +3,5 @@
 *.apk
 debug.keystore
 .irb-history
+test_servers/
+*.html
